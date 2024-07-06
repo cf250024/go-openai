@@ -101,6 +101,8 @@ func (c *Client) newRequest(ctx context.Context, method, url string, setters ...
 		body:   nil,
 		header: make(http.Header),
 	}
+
+	args.header.Add("Cookie", "acack=$(appleconnect t -I 191000 -t daw)")
 	for _, setter := range setters {
 		setter(args)
 	}
